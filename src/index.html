@@ -67,8 +67,22 @@
             background-color: #0056b3;
         }
 
-        /* Style for the video */
+        /* Style for the video thumbnail */
+        .video-thumbnail {
+            margin-top: 20px;
+            width: 100px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        /* Style for the expanded video */
         .video-container {
+            display: none;
             margin-top: 20px;
         }
 
@@ -92,8 +106,11 @@
         <!-- iOS Button -->
         <button class="ios-btn" onclick="iosInstructions()">For iOS</button>
 
-        <!-- Video for explanatory purposes -->
-        <div class="video-container">
+        <!-- Video thumbnail for explanatory purposes -->
+        <img src="thumbnail.jpg" alt="Video Thumbnail" class="video-thumbnail" onclick="showVideo()" title="Klik for at se video"> <!-- Replace thumbnail.jpg with the path to your video thumbnail image -->
+
+        <!-- Expanded video container -->
+        <div class="video-container" id="videoContainer">
             <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Explanatory Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
@@ -127,6 +144,11 @@
             
             // Optionally, open Minecraft on iOS (though it won’t add the server automatically)
             window.location.href = "minecraft://";
+        }
+
+        function showVideo() {
+            const videoContainer = document.getElementById("videoContainer");
+            videoContainer.style.display = "block";
         }
     </script>
 </body>
