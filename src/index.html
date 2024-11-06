@@ -28,7 +28,7 @@
             border-radius: 10px;
         }
 
-        /* Style the button */
+        /* Style the buttons */
         button {
             background-color: #4CAF50; /* Green */
             border: none;
@@ -53,17 +53,19 @@
         <h1>Velkommen til Frejas Minecraft Server!</h1>
     
         <!-- Display website information -->
-        <p>Tryk på knappen for at tilføje min minecraft server på din computer, mobil eller tablet.</p>
+        <p>Tryk på den relevante knap for at tilføje serveren på din enhed.</p>
 
-        <!-- Button to connect to the server -->
-        <button onclick="forbindTilServer()">Forbind til Freja By Minecraft Server</button>
+        <!-- Windows/Android Button -->
+        <button onclick="forbindTilServer()">For Windows/Android</button>
+
+        <!-- iOS Button -->
+        <button onclick="iosInstructions()">For iOS</button>
+
         <!-- Display server information -->
-        <p>Information til manuelt at tilføje serveren:</strong></p>
-        
+        <p>Information til manuelt at tilføje serveren:</p>
         <p>Servernavn: <strong>Freja By</strong></p>
         <p>Serveradresse: <strong>frejaby.aser.dk</strong></p>
         <p>Serverport: <strong>19132</strong></p>
-        
     </div>
 
     <script>
@@ -72,8 +74,23 @@
             const serverPort = "19132";
             const serverNavn = "Freja By";
 
+            // Create the Minecraft Bedrock URL to add the server
             const bedrockUrl = `minecraft://?addExternalServer=${encodeURIComponent(serverNavn)}|${serverAdresse}:${serverPort}`;
+            
+            // Attempt to open Minecraft and add the server on Windows/Android
             window.location.href = bedrockUrl;
+        }
+
+        function iosInstructions() {
+            // Display an alert with manual instructions for iOS users
+            const serverNavn = "Freja By";
+            const serverAdresse = "frejaby.aser.dk";
+            const serverPort = "19132";
+            
+            alert(`For iOS brugere:\n\n1. Åbn Minecraft.\n2. Gå til 'Play' > 'Servers'.\n3. Klik på 'Add Server'.\n4. Indtast:\n   - Servernavn: ${serverNavn}\n   - Serveradresse: ${serverAdresse}\n   - Port: ${serverPort}\n\nTilføj serveren manuelt.`);
+            
+            // Optionally, open Minecraft on iOS (though it won’t add the server automatically)
+            window.location.href = "minecraft://";
         }
     </script>
 </body>
