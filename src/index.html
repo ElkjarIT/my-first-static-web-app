@@ -3,24 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forbind til Frejas Minecraft Bedrock Server</title>
+    <title>Forbind til Minecraft Bedrock Server</title>
+    <style>
+        /* Set up the background image */
+        body {
+            background-image: url('background.png'); /* Replace with your image file path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white; /* White text for contrast */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Centering container */
+        .container {
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Style the button */
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Velkommen til Frejas Minecraft Server!</h1>
+    <div class="container">
+        <h1>Velkommen til Frejas Minecraft Server!</h1>
     
-    <!-- Display website information -->
-    <p>Tryk på knappen for at tilføje min minecraft server på din computer, mobil eller tablet.</p>
+        <!-- Display website information -->
+        <p>Tryk på knappen for at tilføje min minecraft server på din computer, mobil eller tablet.</p>
 
-    <!-- Button to connect to the server -->
-    <button onclick="forbindTilServer()">Forbind til Freja By Minecraft Server</button>
+        <!-- Button to connect to the server -->
+        <button onclick="forbindTilServer()">Forbind til Freja By Minecraft Server</button>
+        <!-- Display server information -->
+        <p>Information til manuelt at tilføje serveren:</strong></p>
+        
+        <p>Servernavn: <strong>Freja By</strong></p>
+        <p>Serveradresse: <strong>frejaby.aser.dk</strong></p>
+        <p>Serverport: <strong>19132</strong></p>
+        
+    </div>
 
-    <!-- Display server information -->
-    <p>Information til manuelt at tilføje serveren:</strong></p>
-    
-    <p>Servernavn: <strong>Freja By</strong></p>
-    <p>Serveradresse: <strong>frejaby.aser.dk</strong></p>
-    <p>Serverport: <strong>19132</strong></p>
-    
     <script>
         function forbindTilServer() {
             const serverAdresse = "frejaby.aser.dk";
