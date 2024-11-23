@@ -29,8 +29,8 @@
             max-width: 600px;
         }
 
-        /* Style for the Windows/Android button */
-        .windows-android-btn {
+        /* Style the buttons */
+        button {
             background-color: #4CAF50; /* Green */
             border: none;
             color: white;
@@ -44,76 +44,26 @@
             border-radius: 5px;
         }
 
-        .windows-android-btn:hover {
+        button:hover {
             background-color: #45a049;
         }
 
-        /* Style for the iOS button */
-        .ios-btn {
-            background-color: #007BFF; /* Blue */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .ios-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Style for the video thumbnail */
-        .video-thumbnail {
-            margin-top: 20px;
-            width: 100px;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .video-thumbnail:hover {
-            transform: scale(1.1);
-        }
-
-        /* Style for the expanded video container */
+        /* Style for the YouTube embed */
         .video-container {
-            display: none;
             margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
             position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
         }
 
         .video-container iframe {
-            width: 100%;
-            height: 315px;
-            border-radius: 10px;
-        }
-
-        /* Style for the close button inside the video container */
-        .close-btn {
             position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            font-size: 20px;
-            line-height: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close-btn:hover {
-            background-color: #e60000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -125,18 +75,19 @@
         <p>Tryk på den relevante knap for at tilføje serveren på din enhed.</p>
 
         <!-- Windows/Android Button -->
-        <button class="windows-android-btn" onclick="forbindTilServer()">For Windows/Android</button>
+        <button onclick="forbindTilServer()">For Windows/Android</button>
 
         <!-- iOS Button -->
-        <button class="ios-btn" onclick="iosInstructions()">For iOS</button>
+        <button onclick="iosInstructions()">For iOS</button>
 
-        <!-- Video thumbnail for explanatory purposes -->
-        <img src="thumbnail.jpg" alt="Video Thumbnail" class="video-thumbnail" onclick="showVideo()" title="Klik for at se video"> <!-- Replace thumbnail.jpg with the path to your video thumbnail image -->
-
-        <!-- Expanded video container with close button -->
-        <div class="video-container" id="videoContainer">
-            <button class="close-btn" onclick="closeVideo()">×</button>
-            <iframe src="https://www.youtube.com/embed/kH4UV1zdQ9Y" title="Explanatory Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Embedded YouTube video -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                    title="Explanatory Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
         </div>
 
         <!-- Display server information -->
@@ -169,16 +120,6 @@
             
             // Optionally, open Minecraft on iOS (though it won’t add the server automatically)
             window.location.href = "minecraft://";
-        }
-
-        function showVideo() {
-            const videoContainer = document.getElementById("videoContainer");
-            videoContainer.style.display = "block";
-        }
-
-        function closeVideo() {
-            const videoContainer = document.getElementById("videoContainer");
-            videoContainer.style.display = "none";
         }
     </script>
 </body>
