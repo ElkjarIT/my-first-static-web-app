@@ -26,11 +26,10 @@
             background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
             padding: 20px;
             border-radius: 10px;
-            max-width: 600px;
         }
 
-        /* Style the buttons */
-        button {
+        /* Style for the Windows/Android button */
+        .windows-android-btn {
             background-color: #4CAF50; /* Green */
             border: none;
             color: white;
@@ -44,8 +43,27 @@
             border-radius: 5px;
         }
 
-        button:hover {
+        .windows-android-btn:hover {
             background-color: #45a049;
+        }
+
+        /* Style for the iOS button */
+        .ios-btn {
+            background-color: #007BFF; /* Blue */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .ios-btn:hover {
+            background-color: #0056b3;
         }
 
         /* Style for the YouTube embed */
@@ -75,14 +93,14 @@
         <p>Tryk på den relevante knap for at tilføje serveren på din enhed.</p>
 
         <!-- Windows/Android Button -->
-        <button onclick="forbindTilServer()">For Windows/Android</button>
+        <button class="windows-android-btn" onclick="forbindTilServer()">For Windows/Android</button>
 
         <!-- iOS Button -->
-        <button onclick="iosInstructions()">For iOS</button>
+        <button class="ios-btn" onclick="iosInstructions()">For iOS</button>
 
         <!-- Embedded YouTube video -->
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/kH4UV1zdQ9Y" 
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
                     title="Explanatory Video" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
